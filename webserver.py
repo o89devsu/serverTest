@@ -1,8 +1,11 @@
 import socket
 
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname())
+
 HOST = '0.0.0.0'
 PORT = 12345
-TARGET_HOST = 'ziel_server_ip_adresse'
+TARGET_HOST = local_ip
 TARGET_PORT = 54321
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
